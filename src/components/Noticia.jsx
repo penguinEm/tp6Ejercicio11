@@ -1,23 +1,24 @@
 import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 
-const Noticia = () => {
+const Noticia = ({titulo, imagen, verMas, descripcion }) => {
+
+    const irAlEnlace = () => {
+        window.open(verMas, "_blank");
+      };
   return (
     <Card className="mt-5 px-0 shadow" style={{ width: "18rem" }}>
       <Card.Header>
-        <Card.Title>Título de la noticia</Card.Title>
-        <Card.Subtitle className="text-secondary">Diario Z</Card.Subtitle>
+        <Card.Title>{titulo}</Card.Title>
+        <Card.Img src={imagen} alt="Imagen de la noticia"></Card.Img>
       </Card.Header>
-      <Card.Body className="cardScrool">
+      <Card.Body className="cardScroll">
         <Card.Text>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsa
-          error doloremque nobis rem nisi, quis illo incidunt consequuntur
-          eveniet dolorem harum, assumenda cumque sint quas a accusantium.
-          Quibusdam, cumque.
+          {descripcion}
         </Card.Text>
       </Card.Body>
       <Card.Footer className="text-end">
-        <Button variant="danger">Ver mas</Button>
+      <Button variant="danger"  onClick={irAlEnlace}>Ver mas</Button>
       </Card.Footer>
     </Card>
   );
