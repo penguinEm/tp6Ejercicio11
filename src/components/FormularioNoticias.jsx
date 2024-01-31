@@ -18,7 +18,6 @@ const FormularioNoticias = () => {
     const respuesta = await fetch(urlAPI);
     const datos = await respuesta.json();
     setNoticias(datos.results);
-    console.log(noticias)
   };
 
   const manejadorSubmit = async (e) => {
